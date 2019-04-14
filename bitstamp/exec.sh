@@ -1,0 +1,1 @@
+docker exec -it bitstamp-dump:1.0 /bin/sh

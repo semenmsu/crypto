@@ -1,0 +1,1 @@
+docker build -t bitstamp-dump:1.0 . --no-cache
