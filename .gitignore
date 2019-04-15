@@ -1,6 +1,6 @@
 bitstamp/data
-
-
+bitstamp/ubuntu-xenial-16.04-cloudimg-console.log
+bitstamp/.vagrant/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
