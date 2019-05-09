@@ -3,9 +3,42 @@ import time
 import json
 from datetime import datetime
 from exchange.channel import *
+from decimal import Decimal
 
 
 websocket.enableTrace(True)
+
+MULTIPLIER = 1000000
+
+
+class BtsMessage:
+    def __init__(self, message):
+        d = json.loads(message)
+        self.dict = d
+        self.full_channel = d["channel"]
+        self.channel = d["channel"]
+        self.event = d["event"]
+        if self.full_channel.startswith('live_trades_') and self.event == 'trade':
+            self.channel = "live_trades"
+            self.symbol = self.full_channel[12:]
+            self.price = int(
+                Decimal(self.dict['data']['price_str'])*MULTIPLIER)
+            self.amount = int(
+                Decimal(self.dict['data']['amount_str'])*MULTIPLIER)
+
+    def json(self):
+        if 'channel' in self.__dict__ and self.channel == "live_trades":
+            return f"{{symbol: {self.full_symbol()}, bid: {self.price}, ask: {self.price}}}"
+
+    def full_symbol(self):
+        return f'bitstamp@{self.symbol}'
+
+    def __repr__(self):
+
+        if 'channel' in self.__dict__ and self.channel == 'live_trades':
+            return(f"channel: {self.channel} event: {self.event} symbol: {self.symbol} price: {self.price} amount: {self.amount}")
+        else:
+            return(f"channel: {self.full_channel} event: {self.event}")
 
 
 class Bitstamp:

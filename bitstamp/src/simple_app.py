@@ -1,5 +1,5 @@
 from config import *
-from exchange.bitstamp import Bitstamp
+from exchange.bitstamp import Bitstamp, BtsMessage
 import json
 
 bts = Bitstamp(config)

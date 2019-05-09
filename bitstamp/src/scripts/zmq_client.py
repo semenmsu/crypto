@@ -12,8 +12,9 @@ while True:
         receiver.subscribe(symbol)
         while True:
             msg = receiver.recv_multipart()
-            body = json.loads(msg[1].decode("ascii"))
             print(msg)
+            #body = json.loads(msg[1].decode("ascii"))
+            # print(msg)
     except Exception as err:
         print("Exception: ", err)
     finally:
