@@ -2,7 +2,7 @@ import websocket
 import time
 import json
 from datetime import datetime
-from ex.channel import *
+from exchange.channel import *
 
 
 websocket.enableTrace(True)

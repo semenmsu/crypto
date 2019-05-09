@@ -1,5 +1,5 @@
 from config import *
-from ex.bitstamp import Bitstamp
+from exchange.bitstamp import Bitstamp
 import json
 import atexit
 import time

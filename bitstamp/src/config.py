@@ -12,6 +12,7 @@ etheur ethbtc bchusd bcheur bchbtc
 - diff_order_book
 '''
 
+'''
 config = {
     "btcusd": ["live_trades"],
     "btceur": ["live_trades"],
@@ -23,4 +24,8 @@ config = {
     "ltceur": ["live_trades"],
     "ltcbtc": ["live_trades"],
     "ethusd": ["live_trades"]
+}
+'''
+config = {
+    "btcusd": ["live_trades"],
 }
