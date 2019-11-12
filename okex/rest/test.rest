@@ -1,0 +1,41 @@
+GET https://www.okex.com/api/spot/v3/instruments
+
+###
+
+GET https://www.okex.com/api/futures/v3/instruments
+
+
+###
+
+GET https://www.okex.com/api/swap/v3/instruments
+
+
+### OrderBook
+
+GET https://www.okex.com/api/spot/v3/instruments/BTC-USDT/book?size=5&depth=0.2
+
+###
+
+GET /api/futures/v3/instruments/BTC-USD-180309/book?size=50
+
+### Ticker
+
+GET https://www.okex.com/api/spot/v3/instruments/ticker
+
+
+###
+
+GET /api/futures/v3/instruments/ticker
+
+###
+
+GET https://www.okex.com/api/spot/v3/instruments/BTC-USDT/ticker
+
+
+### Historty
+
+GET https://www.okex.com/api/spot/v3/instruments/BTC-USDT/candles?granularity=86400&start=2019-03-18T08%3A28%3A48.899Z&end=2019-03-19T09%3A28%3A48.899Z
+
+### Public Index
+
+GET https://www.okex.com/api/index/v3/BTC-USD/constituents
